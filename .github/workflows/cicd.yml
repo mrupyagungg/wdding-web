@@ -1,0 +1,86 @@
+name: Code Analysis and Deploy
+
+on:
+  push:
+    branches:
+      - "4.x"
+
+jobs:
+  analyze-code:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install npm
+        run: npm install -g npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint (JavaScript)
+        run: npx eslint "js/**/*.js"
+
+      - name: Run stylelint (CSS)
+        run: npx stylelint "css/**/*.css"
+
+      - name: Run HTMLHint (HTML)
+        run: npx htmlhint "**/*.html"
+
+      - name: Run check circular dependency
+        run: npx madge --circular js
+
+  deploy:
+    needs: analyze-code
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install npm
+        run: npm install -g npm
+
+      - name: Check if NETLIFY_AUTH_TOKEN is set
+        run: |
+          if [ -z "${{ secrets.NETLIFY_AUTH_TOKEN }}" ]; then
+            echo "NETLIFY_AUTH_TOKEN is not set. Skipping deployment."
+            exit 0
+          fi
+
+      - name: Install Netlify CLI
+        run: npm install && npm install -g netlify-cli
+
+      - name: Run Build
+        run: npm run build
+
+      - name: Add netlify.toml File for Headers
+        run: |
+          echo "[[headers]]" > netlify.toml
+          echo "  for = \"/*\"" >> netlify.toml
+          echo "  [headers.values]" >> netlify.toml
+          echo "    Access-Control-Allow-Origin = \"*\"" >> netlify.toml
+          echo "    Access-Control-Allow-Headers = \"*\"" >> netlify.toml
+          echo "    Access-Control-Allow-Methods = \"*\"" >> netlify.toml
+          echo "    Access-Control-Expose-Headers = \"*\"" >> netlify.toml
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: netlify deploy --prod --telemetry-disable --dir=. --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
