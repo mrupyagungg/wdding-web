@@ -10,13 +10,40 @@ html {
     scrollbar-width: auto !important;
     -ms-overflow-style: auto !important;
 }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
 
 .font-esthetic {
-    font-family: 'Sacramento', cursive !important;
+    font-family: 'Playfair Display', serif !important;
+}
+.font-esthetic2 {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .font-arabic {
     font-family: 'Noto Naskh Arabic', serif !important;
+}
+
+/* Default (mobile tetap normal) */
+.wedding-info {
+    position: relative;
+}
+
+/* Khusus desktop */
+@media (min-width: 992px) {
+    .wedding-info {
+        position: fixed;
+        bottom: 30px;
+        left: 40px;
+        z-index: 10;
+
+        max-width: 350px;
+        text-align: left !important;
+
+        background: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: 2px !important;
+        padding: 0 !important;
+    }
 }
 
 .img-center-crop {
