@@ -8,6 +8,8 @@
     <title>Website Undangan Pernikahan Priyo dan Rulita Secara Online</title>
 
     <!-- SEO Tag -->
+
+
     <!-- Appearance -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Website Undangan Pernikahan Priyo dan Rulita Secara Online">
@@ -52,8 +54,10 @@
     <script src="./dist/guest.js"></script>
 </head>
 
-<body class="home-page" data-key="" data-url="https://api.ulems.my.id/" data-audio="./assets/music/new.mp3"
-    data-confetti="true" data-time="2026-03-09 09:00:00+07:00">
+<!-- 2c569dce4c8a4171be3a197573c93257e1f668b2c9bc7c8417 -->
+
+<body class="home-page" data-key="" data-url="https://api.ulems.my.id/" data-audio="./assets/music/judika.mp3"
+    data-confetti="true" data-time="2024-01-01 09:30:00">
 
     <!-- Root Invitation -->
     <div class="row m-0 p-0 opacity-0" id="root">
@@ -81,7 +85,7 @@
 
                 <div class="text-center p-4 rounded-5 wedding-info">
                     <h2 class="font-esthetic2 mb-4" style="font-size: 2rem; color: white;">The Wedding of</h2>
-                    <h2 class="font-esthetic mb-4" style="font-size: 4rem; color: white;">Rulita &amp; Priyo </h2>
+                    <h2 class="font-esthetic mb-4" style="font-size: 4rem; color: white;">Priyo &amp; Ruli</h2>
                     <p class="font-esthetic2 m-0" style="font-size: 2rem; color: white;">28 . 12 . 2023</p>
                 </div>
             </div>
@@ -95,99 +99,121 @@
                 data-bs-smooth-scroll="true" tabindex="0">
 
                 <!-- Home -->
-                <section id="home" class="bg-light-dark text-white position-relative overflow-hidden p-0 m-0">
+                <section id="home" class="bg-light-dark position-relative overflow-hidden p-0 m-0">
+                    <div class="position-relative text-center bg-overlay-auto" style="background-color: unset;">
+                        <h1 class="font-esthetic pt-5 pb-4 fw-medium" style="font-size: 2.25rem;">Undangan Pernikahan
+                        </h1>
 
-                    <!-- VIDEO BACKGROUND FIXED -->
-                    <div class="video-wrapper">
-                        <video autoplay muted loop playsinline class="bg-video">
-                            <source src="assets/video/bg2.mp4" type="video/mp4">
-                        </video>
-                        <div class="video-overlay"></div>
-                    </div>
+                        <!-- bg -->
+                        <img src="./assets/images/gallery/DSC02882.JPG" alt="bg"
+                            class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home">
 
-                    <!-- CONTENT -->
-                    <div class="content-wrapper position-relative text-center bg-overlay-auto"
-                        style="background-color: unset;">
-                        <div class="content-wrapper section hero-section">
+                        <!-- foto tengah -->
+                        <img src="./assets/images/gallery/DSC02882.JPG" alt="bg" onclick="undangan.guest.modal(this)"
+                            class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
 
-                            <h1 class="font-esthetic pt-5 pb-4 fw-medium" style="font-size: 2.25rem;">
-                                Undangan Pernikahan
-                            </h1>
+                        <h2 class="font-esthetic my-4" style="font-size: 2.25rem;">Priyo &amp; Rulita </h2>
+                        <p class="my-2" style="font-size: 1.25rem;">Rabu, 15 Maret 2023</p>
 
-                            <!-- foto tengah -->
-                            <img src="./assets/images/gallery/DSC02947.JPG" alt="bg"
-                                onclick="undangan.guest.modal(this)"
-                                class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
+                        <button class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1"
+                            style="font-size: 0.825rem;">
+                            <i class="fa-solid fa-calendar-check me-2"></i>Save Google Calendar
+                        </button>
 
-                            <h2 class="font-esthetic my-4" style="font-size: 2.25rem;">
-                                Rulita &amp; Priyo
-                            </h2>
-
-                            <p class="my-2" style="font-size: 1.25rem;">
-                                Minggu, 29 Maret 2025
-                            </p>
-
-                            <button class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1"
-                                style="font-size: 0.825rem;color: white;">
-                                <i class="fa-solid fa-calendar-check me-2"></i>
-                                Save Google Calendar
-                            </button>
-
-                            <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
-                                <div
-                                    class="mouse-animation border border-white border-2 rounded-5 px-2 py-1 opacity-50">
-                                    <div class="scroll-animation rounded-4 bg-white"></div>
-                                </div>
+                        <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
+                            <div
+                                class="mouse-animation border border-secondary border-2 rounded-5 px-2 py-1 opacity-50">
+                                <div class="scroll-animation rounded-4 bg-secondary"></div>
                             </div>
-
-                            <p class="pb-4 m-0 text-white" style="font-size: 0.825rem;">
-                                Scroll Down
-                            </p>
-
                         </div>
+
+                        <p class="pb-4 m-0 text-secondary" style="font-size: 0.825rem;">Scroll Down</p>
                     </div>
                 </section>
 
+                <!-- Wave Separator -->
+                <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
+                        class="color-theme-svg no-gap-bottom">
+                        <path fill="currentColor" fill-opacity="1"
+                            d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,165.3C672,160,768,96,864,96C960,96,1056,160,1152,154.7C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                        </path>
+                    </svg>
+                </div>
+
                 <!-- Bride -->
-                <section class="bride-section text-center" id="bride">
+                <section class="bg-white-black text-center" id="bride">
 
-                    <div class="container p-4 shadow" data-aos="fade-up" data-aos-duration="2000">
-                        <h2 class="font-arabic mb-3 text-white">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
-                        <h2 class="font-esthetic mb-3 text-white">
-                            Assalamualaikum Warahmatullahi Wabarakatuh
-                        </h2>
-                        <p class="font-esthetic text-white">
-                            Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara
-                            pernikahan kami:
-                        </p>
-                        <div class="row justify-content-center align-items-center mt-4">
-                            <!-- Groom -->
-                            <div data-aos="fade-right" data-aos-duration="2000" class="pb-1"
-                                class="col-md-4 col-10 mb-4 text-light-dark">
-                                <div class="bg-light-dark bride-card">
-                                    <img src="./assets/images/solo-pict/prio.JPG" class="bride-img"
-                                        onclick="undangan.guest.modal(this)">
+                    <h2 class="font-arabic py-4 m-0" style="font-size: 2rem;">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+                    </h2>
+                    <h2 class="font-esthetic py-4 m-0" style="font-size: 2rem;">Assalamualaikum Warahmatullahi
+                        Wabarakatuh</h2>
+                    <p class="pb-4 px-2 m-0" style="font-size: 0.95rem;">Tanpa mengurangi rasa hormat, kami mengundang
+                        Anda untuk berkenan menghadiri acara pernikahan kami:</p>
 
-                                    <h3 class="font-esthetic mt-3">Priyo Pambudi</h3>
-                                    <p class="mb-1">Putra ke-1</p>
-                                    <p class="small text-muted">Bapak Sutimo & Ibu Martinah</p>
-                                </div>
+                    <div class="overflow-x-hidden pb-4">
+
+                        <div class="position-relative">
+                            <!-- Love animation -->
+                            <div class="position-absolute" style="top: 0%; right: 5%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                    class="opacity-50" data-time="500" data-class="animate-love" viewBox="0 0 16 16">
+                                    <path
+                                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                </svg>
                             </div>
-                            <!-- Symbol -->
-                            <div class="col-md-2 col-12 d-flex align-items-center justify-content-center">
-                                <h2 class="font-esthetic and-symbol theme-symbol mt-4">&</h2>
-                            </div>
-                            <!-- Bride -->
-                            <div data-aos="fade-right" data-aos-duration="2000" class="pb-1"
-                                class="col-md-4 col-10 mb-4 text-light-dark">
-                                <div class="bg-light-dark bride-card">
-                                    <img src="./assets/images/solo-pict/ruli.JPG" class="bride-img"
-                                        onclick="undangan.guest.modal(this)">
 
-                                    <h3 class="font-esthetic mt-3">Rulita Ayu Rachmawati</h3>
-                                    <p class="mb-1">Putri ke-2</p>
-                                    <p class="small text-muted">Bapak Suntoro & Ibu Haryanti</p>
-                                </div>
+                            <div data-aos="fade-right" data-aos-duration="2000" class="pb-1">
+                                <img src="./assets/images/solo-pict/prio.JPG" alt="cowo"
+                                    onclick="undangan.guest.modal(this)"
+                                    class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
+                                <h2 class="font-esthetic m-0" style="font-size: 2.125rem;">Priyo Pambudi</h2>
+                                <p class="mt-3 mb-1" style="font-size: 1.25rem;">Putra ke-1</p>
+                                <p class="mb-0" style="font-size: 0.95rem;">Bapak Sutimo</p>
+                                <p class="mb-0" style="font-size: 0.95rem;">dan</p>
+                                <p class="mb-0" style="font-size: 0.95rem;">Ibu Martinah</p>
+                            </div>
+
+                            <!-- Love animation -->
+                            <div class="position-absolute" style="top: 90%; left: 5%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                    class="opacity-50" data-time="2000" data-class="animate-love" viewBox="0 0 16 16">
+                                    <path
+                                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <h2 class="font-esthetic mt-4" style="font-size: 4.5rem;">&amp;</h2>
+
+                        <div class="position-relative">
+                            <!-- Love animation -->
+                            <div class="position-absolute" style="top: 0%; right: 5%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                    class="opacity-50" data-time="3000" data-class="animate-love" viewBox="0 0 16 16">
+                                    <path
+                                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                </svg>
+                            </div>
+
+                            <div data-aos="fade-left" data-aos-duration="2000" class="pb-1">
+                                <img src="./assets/images/solo-pict/ruli.JPG" alt="cewe"
+                                    onclick="undangan.guest.modal(this)"
+                                    class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
+                                <h2 class="font-esthetic m-0" style="font-size: 2.125rem;">Rulita Ayu Rachmawati</h2>
+                                <p class="mt-3 mb-1" style="font-size: 1.25rem;">Putri ke-2</p>
+                                <p class="mb-0" style="font-size: 0.95rem;">Bapak Suntoro</p>
+                                <p class="mb-0" style="font-size: 0.95rem;">dan</p>
+                                <p class="mb-0" style="font-size: 0.95rem;">Ibu Haryanti</p>
+                            </div>
+
+                            <!-- Love animation -->
+                            <div class="position-absolute" style="top: 90%; left: 5%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                    class="opacity-50" data-time="2500" data-class="animate-love" viewBox="0 0 16 16">
+                                    <path
+                                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                </svg>
                             </div>
                         </div>
                     </div>
@@ -196,15 +222,15 @@
                 <!-- Wave Separator -->
                 <div class="svg-wrapper">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
-                        class="color-theme-svg-top no-gap-bottom">
+                        class="color-theme-svg no-gap-bottom">
                         <path fill="currentColor" fill-opacity="1"
-                            d="M0,160L60,170C120,180,240,200,360,192C480,185,600,149,720,144C840,139,960,165,1080,176C1200,187,1320,181,1380,176L1440,171L1440,320L0,320Z">
+                            d="M0,192L40,181.3C80,171,160,149,240,149.3C320,149,400,171,480,165.3C560,160,640,128,720,128C800,128,880,160,960,186.7C1040,213,1120,235,1200,218.7C1280,203,1360,149,1400,122.7L1440,96L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
                         </path>
                     </svg>
                 </div>
 
                 <!-- Firman Allah Subhanahu Wa Ta'ala -->
-                <section class="firman-section bg-light-dark pt-2 pb-4">
+                <section class="bg-light-dark pt-2 pb-4">
                     <div class="container text-center">
                         <h2 class="font-esthetic pt-2 pb-1 m-0" style="font-size: 2rem;">Allah Subhanahu Wa Ta'ala
                             berfirman</h2>
@@ -225,6 +251,111 @@
                     </div>
                 </section>
 
+                <!-- Love Story -->
+                <!-- <section class="bg-light-dark pt-2 pb-4">
+                    <div class="container">
+                        <div class="bg-theme-auto rounded-5 shadow p-3">
+                            <h2 class="font-esthetic text-center py-2 mb-2" style="font-size: 2.125rem;">Kisah Cinta
+                            </h2>
+                            <div id="video-love-stroy" class="position-relative rounded-4 mb-2 pb-0"
+                                data-src="./assets/video/bg2.mp4" data-vid-class="w-100 rounded-4 shadow-sm m-0 p-0">
+                                <div class="position-absolute d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto rounded-4 z-3"
+                                    id="video-love-stroy-loading">
+                                    <div class="progress w-25" role="progressbar" style="height: 0.5rem;"
+                                        aria-label="progress bar">
+                                        <div class="progress-bar" id="progress-bar-video-love-stroy" style="width: 0%;">
+                                        </div>
+                                    </div>
+                                    <small class="mt-1 text-theme-auto bg-theme-auto py-0 px-2 rounded-4"
+                                        id="progress-info-video-love-stroy" style="font-size: 0.7rem;"></small>
+                                </div>
+                            </div>
+
+                            <div class="position-relative">
+                                <div class="position-absolute d-flex justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto z-3"
+                                    style="opacity: 100%; background-color: unset;">
+                                    <button class="btn btn-outline-auto btn-sm rounded-4 shadow-sm"
+                                        onclick="undangan.guest.showStory(this.parentNode)"><i
+                                            class="fa-solid fa-heart fa-bounce me-2"></i>Lihat Story</button>
+                                </div>
+
+                                <div class="overflow-y-scroll overflow-x-hidden p-2 with-scrollbar"
+                                    style="height: 15rem;">
+                                    <div class="row">
+                                        <div class="col-auto position-relative">
+                                            <p class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1"
+                                                style="width: 2rem; height: 2rem;">1</p>
+                                            <hr
+                                                class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none">
+                                        </div>
+                                        <div class="col mt-1 mb-3 ps-0">
+                                            <p class="fw-bold mb-2">💼 Awal Pertemuan Sederhana</p>
+                                            <p class="small mb-0">
+                                                Pada Januari 2025, Priyo, seorang desainer grafis berusia 28 tahun,
+                                                bertemu Ruli, copywriter yang dikenal cerdas dan pendiam, dalam proyek
+                                                branding perusahaan. Interaksi mereka di ruang rapat terbatas pada
+                                                urusan kerja, penuh adab dan profesional. Tanpa Priyo ketahui, Ruli
+                                                sebenarnya pernah melihat karya desain Priyo di lomba nasional dua tahun
+                                                lalu dan kagum dengan bakatnya. Namun, sesuai prinsipnya, Rulita menjaga
+                                                jarak dan hanya fokus pada tugas, menghindari interaksi yang tidak
+                                                perlu.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-auto position-relative">
+                                            <p class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1"
+                                                style="width: 2rem; height: 2rem;">2</p>
+                                            <hr
+                                                class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none">
+                                        </div>
+                                        <div class="col mt-1 mb-3 ps-0">
+                                            <p class="fw-bold mb-2">💞 Benih Cinta dalam Ujian</p>
+                                            <p class="small mb-0">
+                                                Memasuki Februari 2025, proyek mereka menghadapi krisis: klien menolak
+                                                konsep awal dan mengancam membatalkan kontrak. Di tengah tekanan, Ruli
+                                                tampil dengan solusi kreatif yang menyelamatkan proyek, membuat Priyo
+                                                terkesan dengan ketenangan dan kecerdasannya. Diam-diam, Priyo mulai
+                                                memperhatikan Rulita lebih dalam, terutama melalui unggahan media
+                                                sosialnya yang penuh dengan nilai keimanan dan kesabaran. Merasa ada
+                                                kesamaan visi, Priyo beristikharah dan memutuskan memulai taaruf. Ia
+                                                menghubungi seorang ustaz terpercaya sebagai perantara. Kejutan muncul
+                                                saat Rulita mengaku bahwa ia juga telah lama memperhatikan Priyo, namun
+                                                menahan diri hingga ada niat yang jelas, sebuah pengakuan yang membuat
+                                                hati Priyo hangat.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-auto position-relative">
+                                            <p class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1"
+                                                style="width: 2rem; height: 2rem;">3</p>
+                                            <hr
+                                                class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none">
+                                        </div>
+                                        <div class="col mt-1 mb-3 ps-0">
+                                            <p class="fw-bold mb-2">💍 Langkah Menuju Ridha Allah</p>
+                                            <p class="small mb-0">
+                                                Proses taaruf berjalan penuh keikhlasan, dengan pendamping yang
+                                                memastikan setiap langkah sesuai syariat. Priyo dan Rulita saling terbuka
+                                                tentang impian membangun keluarga yang diridhai Allah. Namun, sebuah
+                                                ujian datang: keluarga Rulita ragu karena latar belakang ekonomi Priyo
+                                                yang sederhana. Di sinilah plot twist terungkap—Priyo mempresentasikan
+                                                rencana usaha sosial berbasis seni yang telah ia kembangkan diam-diam,
+                                                menunjukkan visinya untuk memberi manfaat bagi umat. Presentasi itu
+                                                meluluhkan hati keluarga Ruli. Pada Maret 2025, setelah istikharah dan
+                                                mendapat restu keluarga, Priyo melamar Rulita dalam acara sederhana namun
+                                                penuh makna. Dengan niat tulus, mereka melangkah menuju pernikahan,
+                                                yakin bahwa Allah telah merajut kisah mereka dengan indah.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+
                 <!-- Wave Separator -->
                 <div class="svg-wrapper">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
@@ -236,7 +367,7 @@
                 </div>
 
                 <!-- Wedding Date -->
-                <section class="wedding-date bg-white-black pb-2" id="wedding-date">
+                <section class="bg-white-black pb-2" id="wedding-date">
                     <div class="container text-center">
                         <h2 class="font-esthetic py-4 m-0" style="font-size: 2.25rem;">Moment Bahagia</h2>
 
@@ -275,148 +406,16 @@
                             </div>
                         </div>
 
-                        <div class="">
-
-                            <!-- akad  -->
-                            <div class="event-card" data-aos="fade-up" data-aos-duration="1500">
-
-                                <!-- Foto Besar -->
-                                <div class="event-image"
-                                    style="background-image: url('./assets/images/gallery/akad.JPG');">
-                                </div>
-
-                                <!-- Info Box -->
-                                <div class="event-content shadow text-start bg-theme-auto">
-
-                                    <div class="event-date">
-                                        <span class="date-number text-black">29</span>
-                                        <div class="date-text">
-                                            <span>Minggu</span>
-                                            <span>Maret 2026</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="event-detail">
-                                        <h3 class="event-title">Akad</h3>
-
-                                        <p class="event-time">
-                                            <i class="fa-regular fa-clock me-2"></i>
-                                            08.00 WIB - Selesai
-                                        </p>
-
-                                        <p class="event-location-title">LOKASI ACARA</p>
-                                        <p class="event-location">
-                                            Joglo Langenjiwa, Wuryantoro, Wonogiri
-                                        </p>
-
-                                        <a href="https://maps.app.goo.gl/FisLqKjEWRVnznyq6" target="_blank"
-                                            class="btn btn-sm rounded-pill px-3"
-                                            style="color: #000; border: 1px solid #000; transition: 0.3s;"
-                                            onmouseover="this.style.backgroundColor='#6c757d'; this.style.color='#fff'; this.style.borderColor='#6c757d';"
-                                            onmouseout="this.style.backgroundColor='transparent'; this.style.color='#000'; this.style.borderColor='#000';">
-
-                                            <i class="fa-solid fa-map-location-dot me-2"></i>
-                                            Google Maps
-                                        </a>
-
-                                    </div>
-
-                                </div>
+                        <div class="overflow-x-hidden">
+                            <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
+                                <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem;">Akad</h2>
+                                <p style="font-size: 0.95rem;">Pukul 10.00 WIB - Selesai</p>
                             </div>
 
-                            <!-- resepsi -->
-                            <div class="event-card reverse" data-aos="fade-up" data-aos-duration="1500">
-
-                                <!-- Foto Besar -->
-                                <div class="event-image"
-                                    style="background-image: url('./assets/images/gallery/resepsi.JPG');">
-                                </div>
-
-                                <!-- Info Box -->
-                                <div class="event-content shadow text-end text-start bg-theme-auto">
-
-                                    <div class="event-date">
-                                        <span class="date-number text-black">29</span>
-                                        <div class="date-text">
-                                            <span>Minggu</span>
-                                            <span>Maret 2026</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="event-detail">
-                                        <h3 class="event-title">Resepsi</h3>
-
-                                        <p class="event-time">
-                                            <i class="fa-regular fa-clock me-2"></i>
-                                            10.00 WIB - Selesai
-                                        </p>
-
-                                        <p class="event-location-title">LOKASI ACARA</p>
-                                        <p class="event-location">
-                                            Joglo Langenjiwa, Wuryantoro, Wonogiri
-                                        </p>
-
-                                        <a href="https://maps.app.goo.gl/FisLqKjEWRVnznyq6" target="_blank"
-                                            class="btn btn-sm rounded-pill px-3"
-                                            style="color: #000; border: 1px solid #000; transition: 0.3s;"
-                                            onmouseover="this.style.backgroundColor='#6c757d'; this.style.color='#fff'; this.style.borderColor='#6c757d';"
-                                            onmouseout="this.style.backgroundColor='transparent'; this.style.color='#000'; this.style.borderColor='#000';">
-
-                                            <i class="fa-solid fa-map-location-dot me-2"></i>
-                                            Google Maps
-                                        </a>
-
-                                    </div>
-
-                                </div>
+                            <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
+                                <h2 class="font-esthetic m-0 py-2" style="font-size: 2rem;">Resepsi</h2>
+                                <p style="font-size: 0.95rem;">Pukul 13.00 WIB - Selesai</p>
                             </div>
-
-                            <!-- unduh -->
-                            <div class="event-card " data-aos="fade-up" data-aos-duration="1500">
-
-                                <!-- Foto Besar -->
-                                <div class="event-image"
-                                    style="background-image: url('./assets/images/gallery/ngunduh.JPG');">
-                                </div>
-
-                                <!-- Info Box -->
-                                <div class="event-content shadow text-start bg-theme-auto">
-
-                                    <div class="event-date">
-                                        <span class="date-number text-black">19</span>
-                                        <div class="date-text">
-                                            <span>Minggu</span>
-                                            <span>April 2026</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="event-detail">
-                                        <h3 class="event-title">Ngunduh Mantu</h3>
-
-                                        <p class="event-time">
-                                            <i class="fa-regular fa-clock me-2"></i>
-                                            10.00 WIB - Selesai
-                                        </p>
-
-                                        <p class="event-location-title">LOKASI ACARA</p>
-                                        <p class="event-location">
-                                            Jl. Tiga Putra RT 02, Blk. Singkuk No.55,
-                                            Meruyung, Limo, Depok, Jawa Barat
-                                        </p>
-                                        <a href="https://maps.app.goo.gl/AiyLcRd8ZY7kV5Fx5" target="_blank"
-                                            class="btn btn-sm rounded-pill px-3"
-                                            style="color: #000; border: 1px solid #000; transition: 0.3s;"
-                                            onmouseover="this.style.backgroundColor='#6c757d'; this.style.color='#fff'; this.style.borderColor='#6c757d';"
-                                            onmouseout="this.style.backgroundColor='transparent'; this.style.color='#000'; this.style.borderColor='#000';">
-
-                                            <i class="fa-solid fa-map-location-dot me-2"></i>
-                                            Google Maps
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
                         </div>
 
                         <p class="py-2 m-0" style="font-size: 0.95rem;">Demi kehangatan bersama, kami memohon kesediaan
@@ -436,28 +435,33 @@
                         <div class="py-2" data-aos="fade-down" data-aos-duration="1500">
                             <div class="d-flex justify-content-center align-items-center mb-3">
                                 <div class="shadow rounded-circle border border-secondary"
-                                    style="width: 3rem; height: 3rem; background-color: #ffffff;"></div>
-
+                                    style="width: 3rem; height: 3rem; background-color: white;"></div>
                                 <div class="shadow rounded-circle border border-secondary"
-                                    style="width: 3rem; height: 3rem; background-color: #C68E5A; margin-left: -1rem;">
+                                    style="width: 3rem; height: 3rem; background-color: aquamarine; margin-left: -1rem;">
                                 </div>
-
                                 <div class="shadow rounded-circle border border-secondary"
-                                    style="width: 3rem; height: 3rem; background-color: #E6C7A3; margin-left: -1rem;">
+                                    style="width: 3rem; height: 3rem; background-color: limegreen; margin-left: -1rem;">
                                 </div>
                             </div>
                             <p style="font-size: 0.95rem;">Busana batik dan bersepatu.</p>
+                        </div>
+
+                        <div class="py-2" data-aos="fade-down" data-aos-duration="1500">
+                            <a href="https://goo.gl/maps/ALZR6FJZU3kxVwN86" target="_blank"
+                                class="btn btn-outline-auto btn-sm rounded-pill shadow mb-2 px-3"><i
+                                    class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps</a>
+                            <small class="d-block my-1">RT 10 RW 02, Desa Pajerukan, Kec. Kalibagor, Kab. Banyumas, Jawa
+                                Tengah 53191.</small>
                         </div>
                     </div>
                 </section>
 
                 <!-- Gallery -->
-                <section class="gallery bg-white-black pb-5 pt-3" id="gallery">
+                <section class="bg-white-black pb-5 pt-3" id="gallery">
                     <div class="container">
                         <div class="border rounded-5 shadow p-3">
 
-                            <h2 class="font-esthetic text-center py-2 m-0" style="font-size: 2.25rem;">CAPTURE OF US
-                            </h2>
+                            <h2 class="font-esthetic text-center py-2 m-0" style="font-size: 2.25rem;">Galeri</h2>
 
                             <div id="carousel-image-one" data-aos="fade-up" data-aos-duration="1500"
                                 class="carousel slide mt-4" data-bs-ride="carousel">
@@ -469,7 +473,7 @@
                                     <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="2"
                                         aria-label="Slide 3"></button>
                                 </div>
-
+                                <!-- card 1 -->
                                 <div class="carousel-inner rounded-4">
                                     <div class="carousel-item active">
                                         <img src="./assets/images/gallery/1.JPG" alt="image 1"
@@ -501,20 +505,20 @@
                                 </button>
                             </div>
 
-                            <div id="carousel-image-one" data-aos="fade-up" data-aos-duration="1500"
+                            <div id="carousel-image-two" data-aos="fade-up" data-aos-duration="1500"
                                 class="carousel slide mt-4" data-bs-ride="carousel">
-                                 <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="0"
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="0"
                                         class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="1"
+                                    <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="1"
                                         aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="2"
+                                    <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="2"
                                         aria-label="Slide 3"></button>
                                 </div>
-
+                                <!-- card 2 -->
                                 <div class="carousel-inner rounded-4">
                                     <div class="carousel-item active">
-                                        <img src="./assets/images/gallery/header undangan.JPG" alt="image 4"
+                                        <img src="./assets/images/gallery/HEADER COVER DEPAN.JPG" alt="image 4"
                                             class="d-block img-fluid cursor-pointer"
                                             onclick="undangan.guest.modal(this)">
                                     </div>
@@ -557,127 +561,105 @@
                 </div>
 
                 <!-- Love Gift -->
-                <section class="love-gift bg-light-dark pb-3">
+                <section class="bg-light-dark pb-3">
                     <div class="container text-center">
                         <h2 class="font-esthetic pt-3 mb-4" style="font-size: 2.25rem;">Love Gift</h2>
                         <p class="mb-1" style="font-size: 0.95rem;">Dengan hormat, bagi Anda yang ingin memberikan tanda
                             kasih kepada kami, dapat melalui:</p>
 
-                        <!-- bca ruli -->
                         <div class="bg-theme-auto rounded-4 shadow p-3 mx-4 mt-4 text-start" data-aos="fade-up"
                             data-aos-duration="2500">
-
-                            <div class="mb-2">
-                                <i class="fa-solid fa-money-bill-transfer me-2"></i>
-                                <span class="fw-semibold">Transfer</span>
-                            </div>
-
-                            <p class="m-0 mb-2" style="font-size: 0.95rem;">
-                                <i class="fa-regular fa-user fa-sm me-1"></i>
-                                Rulita Ayu Rachmawati
-                            </p>
-
-                            <p class="m-0 mb-2 d-flex align-items-center" style="font-size: 0.9rem;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg"
-                                    alt="BCA" style="height:16px; object-fit:contain; margin-right:8px;">
-                                <span class="fw-medium"></span>
-                            </p>
+                            <i class="fa-solid fa-money-bill-transfer"></i>
+                            <p class="d-inline">Transfer</p>
 
                             <div class="d-flex justify-content-between align-items-center mt-2">
-                                <p class="m-0 p-0" style="font-size: 0.85rem;">
-                                    <i class="fa-solid fa-credit-card me-1"></i>
-                                    1490694826
-                                </p>
-
+                                <p class="m-0 p-0" style="font-size: 0.95rem;"><i
+                                        class="fa-regular fa-user fa-sm me-1"></i>Rulita Siapa?</p>
                                 <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0"
-                                    style="font-size: 0.75rem;" data-copy="1490694826"
-                                    onclick="undangan.util.copy(this)">
-                                    <i class="fa-solid fa-copy"></i>
-                                </button>
+                                    style="font-size: 0.75rem;" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTf"><i
+                                        class="fa-solid fa-circle-info fa-sm me-1"></i>Info</button>
+                            </div>
+
+                            <div class="collapse" id="collapseTf">
+                                <hr class="my-2 py-1">
+                                <p class="m-0" style="font-size: 0.9rem;"><i
+                                        class="fa-solid fa-building-columns me-1"></i>Bank Central Asia</p>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <p class="m-0 p-0" style="font-size: 0.85rem;"><i
+                                            class="fa-solid fa-credit-card me-1"></i>1234567891234</p>
+                                    <!-- Ubah juga data-copy sesuai dengan no rekening -->
+                                    <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0"
+                                        style="font-size: 0.75rem;" data-copy="1234567891234"
+                                        onclick="undangan.util.copy(this)"><i class="fa-solid fa-copy"></i></button>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- bca priyo -->
                         <div class="bg-theme-auto rounded-4 shadow p-3 mx-4 mt-4 text-start" data-aos="fade-up"
                             data-aos-duration="2500">
-
-                            <div class="mb-2">
-                                <i class="fa-solid fa-money-bill-transfer me-2"></i>
-                                <span class="fw-semibold">Transfer</span>
-                            </div>
-
-                            <p class="m-0 mb-2" style="font-size: 0.95rem;">
-                                <i class="fa-regular fa-user fa-sm me-1"></i>
-                                Priyo Pambudi
-                            </p>
-
-                            <p class="m-0 mb-2 d-flex align-items-center" style="font-size: 0.9rem;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg"
-                                    alt="BCA" style="height:16px; object-fit:contain; margin-right:8px;">
-                                <span class="fw-medium"></span>
-                            </p>
+                            <i class="fa-solid fa-qrcode fa-lg"></i>
+                            <p class="d-inline">Qris</p>
 
                             <div class="d-flex justify-content-between align-items-center mt-2">
-                                <p class="m-0 p-0" style="font-size: 0.85rem;">
-                                    <i class="fa-solid fa-credit-card me-1"></i>
-                                    2670228731
-                                </p>
-
+                                <p class="m-0 p-0" style="font-size: 0.95rem;"><i
+                                        class="fa-regular fa-user fa-sm me-1"></i>Priyo Siapa?</p>
                                 <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0"
-                                    style="font-size: 0.75rem;" data-copy="2670228731"
-                                    onclick="undangan.util.copy(this)">
-                                    <i class="fa-solid fa-copy"></i>
-                                </button>
+                                    style="font-size: 0.75rem;" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseQris"><i
+                                        class="fa-solid fa-circle-info fa-sm me-1"></i>Info</button>
+                            </div>
+
+                            <div class="collapse" id="collapseQris">
+                                <hr class="my-2 py-1">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="./assets/images/placeholder.webp" data-src="./assets/images/donate.png"
+                                        alt="donate" class="img-fluid rounded-3 mx-auto bg-white">
+                                </div>
                             </div>
                         </div>
 
-                        <!-- gift -->
                         <div class="bg-theme-auto rounded-4 shadow p-3 mx-4 mt-4 text-start" data-aos="fade-up"
                             data-aos-duration="2500">
+                            <i class="fa-solid fa-gift fa-lg"></i>
+                            <p class="d-inline">Gift</p>
 
-                            <!-- Title -->
-                            <div class="mb-3">
-                                <i class="fa-solid fa-gift fa-lg me-2"></i>
-                                <span class="fw-semibold">Gift</span>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <p class="m-0 p-0" style="font-size: 0.95rem;"><i
+                                        class="fa-regular fa-user fa-sm me-1"></i>Priyo Siapa?</p>
+                                <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0"
+                                    style="font-size: 0.75rem;" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseGift"><i
+                                        class="fa-solid fa-circle-info fa-sm me-1"></i>Info</button>
                             </div>
 
-                            <!-- Nama -->
-                            <p class="m-0 mb-3" style="font-size: 0.95rem;">
-                                <i class="fa-regular fa-user fa-sm me-1"></i>
-                                Priyo Pambudi
-                            </p>
-
-                            <!-- No HP -->
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <p class="m-0" style="font-size: 0.85rem;">
-                                    <i class="fa-solid fa-phone-volume me-1"></i>
-                                    085156597536
-                                </p>
-                                <button class="btn btn-outline-auto btn-sm rounded-4 py-0" style="font-size: 0.75rem;"
-                                    data-copy="085156597536" onclick="undangan.util.copy(this)">
-                                    <i class="fa-solid fa-copy"></i>
-                                </button>
-                            </div>
-
-                            <!-- Alamat -->
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <p class="m-0 me-2" style="font-size: 0.85rem;">
-                                    <i class="fa-solid fa-location-dot me-1"></i>
-                                    Jl. Tiga Putra Rt 02, Blk. Singkuk No.55, Meruyung, Kec. Limo, Kota Depok, Jawa
-                                    Barat 16532
-                                </p>
-                                <button class="btn btn-outline-auto btn-sm rounded-4 py-0" style="font-size: 0.75rem;"
-                                    data-copy="RT 10 RW 02, Desa Pajerukan, Kec. Kalibagor, Kab. Banyumas, Jawa Tengah 53191."
-                                    onclick="undangan.util.copy(this)">
-                                    <i class="fa-solid fa-copy"></i>
-                                </button>
+                            <div class="collapse" id="collapseGift">
+                                <hr class="my-2 py-1">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <p class="m-0 p-0" style="font-size: 0.85rem;"><i
+                                            class="fa-solid fa-phone-volume me-1"></i>0812345678</p>
+                                    <!-- Ubah juga data-copy sesuai dengan no hp -->
+                                    <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0"
+                                        style="font-size: 0.75rem;" data-copy="0812345678"
+                                        onclick="undangan.util.copy(this)"><i class="fa-solid fa-copy"></i></button>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="my-0 p-0 text-truncate me-2" style="font-size: 0.85rem;"><i
+                                            class="fa-solid fa-location-dot me-1"></i>RT 10 RW 02, Desa Pajerukan, Kec.
+                                        Kalibagor, Kab. Banyumas, Jawa Tengah 53191.</p>
+                                    <!-- Ubah juga data-copy sesuai dengan alamat -->
+                                    <button class="btn btn-outline-auto btn-sm shadow-sm rounded-4 py-0"
+                                        style="font-size: 0.75rem;"
+                                        data-copy="RT 10 RW 02, Desa Pajerukan, Kec. Kalibagor, Kab. Banyumas, Jawa Tengah 53191."
+                                        onclick="undangan.util.copy(this)"><i class="fa-solid fa-copy"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- Comment -->
-                <section class="comment bg-light-dark my-0 pb-0 pt-3" id="comment">
+                <section class="bg-light-dark my-0 pb-0 pt-3" id="comment">
                     <div class="container">
                         <div class="border rounded-5 shadow p-3 mb-2">
                             <h2 class="font-esthetic text-center mt-2 mb-4" style="font-size: 2.25rem;">Ucapan &amp; Doa
@@ -747,31 +729,42 @@
                     </div>
                 </section>
 
+                <!-- Wave Separator -->
+                <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
+                        class="color-theme-svg no-gap-bottom">
+                        <path fill="currentColor" fill-opacity="1"
+                            d="M0,224L34.3,234.7C68.6,245,137,267,206,266.7C274.3,267,343,245,411,234.7C480,224,549,224,617,213.3C685.7,203,754,181,823,197.3C891.4,213,960,267,1029,266.7C1097.1,267,1166,213,1234,192C1302.9,171,1371,181,1406,186.7L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+                        </path>
+                    </svg>
+                </div>
+
                 <!-- End Of Invitation -->
-                <section class="end-section position-relative py-2 no-gap-bottom">
-                    <!-- Background Slider -->
-                    <div class="bg-slider">
-                        <div class="slide-end active" style="background-image: url('./assets/images/bg1.jpg');"></div>
-                        <div class="slide-end" style="background-image: url('./assets/images/bg2.jpg');"></div>
-                        <div class="slide-end" style="background-image: url('./assets/images/bg3.jpg');"></div>
-                    </div>
+                <section class="bg-white-black py-2 no-gap-bottom">
+                    <div class="container text-center">
+                        <p class="pb-2 pt-4" style="font-size: 0.95rem;">Terima kasih atas perhatian dan doa restu Anda,
+                            yang menjadi kebahagiaan serta kehormatan besar bagi kami.</p>
 
-                    <!-- Content -->
-                    <div class="container text-center position-relative text-white">
-                        <p class="mt-4 fst-italic" style="font-size: 1.1rem; opacity: 0.9;">
-                            “Dan di antara jutaan kemungkinan, Allah memilihkan kita untuk saling menemukan,
-                            bukan karena kebetulan, melainkan karena takdir yang telah tertulis dengan penuh cinta.”
-                        </p>
-
-                        <h2 class="font-esthetic" style="font-size: 2rem;">
-                            Wassalamualaikum Warahmatullahi Wabarakatuh
+                        <h2 class="font-esthetic" style="font-size: 2rem;">Wassalamualaikum Warahmatullahi Wabarakatuh
+                        </h2>
+                        <h2 class="font-arabic pt-4" style="font-size: 2rem;">اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَۙ
                         </h2>
 
-                        <hr class="my-3 border-light">
+                        <hr class="my-3">
 
+                        <div class="row align-items-center justify-content-between flex-column pb-3">
+                            <div class="col-auto">
+                                <!-- <small>Build with<i class="fa-solid fa-heart mx-1"></i>Dewanakl</small> -->
+                            </div>
+                            <div class="col-auto">
+                                <!-- <small><i class="fa-brands fa-github me-1"></i><a target="_blank" href="https://github.com/dewanakl/undangan">github</a></small> -->
+                                <!-- <small><i class="fa-solid fa-chart-simple me-1"></i><a target="_blank" href="https://status.ulems.my.id">status</a></small> -->
+                                <small><i class="fa-solid fa-music me-1"></i><a target="_blank"
+                                        href="https://pixabay.com/music/modern-classical-pure-love-304010">music</a></small>
+                            </div>
+                        </div>
                     </div>
                 </section>
-
             </main>
 
             <!-- Navbar Bottom -->
@@ -813,16 +806,12 @@
     </div>
 
     <!-- Welcome Page -->
-    <div class="text-white loading-page bg-white-black" id="welcome" style="opacity: 0;">
-
-        <img src="./assets/images/gallery/DSC02966.JPG"
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; filter:brightness(60%) blur(1px); z-index:-1;">
-
+    <div class="loading-page bg-white-black" id="welcome" style="opacity: 0;">
         <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
             <div class="d-flex flex-column text-center">
                 <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">The Wedding Of</h2>
 
-                <img src="./assets/images/gallery/header undangan.JPG" alt="background"
+                <img src="./assets/images/placeholder.webp" data-src="./assets/images/bg.webp" alt="background"
                     class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto">
 
                 <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">Rulita &amp; Priyo </h2>
@@ -869,12 +858,12 @@
                 </noscript>
             </div>
         </div>
-        <!-- <div class="text-center position-fixed w-100" style="bottom: 8%; left: 0;">
+        <div class="text-center position-fixed w-100" style="bottom: 8%; left: 0;">
             <div class="d-flex flex-column">
                 <small class="text-secondary">from</small>
                 <small class="text-theme-auto"><i class="fa-brands fa-github me-1"></i>dewanakl</small>
             </div>
-        </div> -->
+        </div>
     </div>
 
     <!-- Modal Image -->
@@ -906,41 +895,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const slides = document.querySelectorAll(".slide");
-            let current = 0;
-
-            function nextSlide() {
-                slides[current].classList.remove("active");
-                current = (current + 1) % slides.length;
-                slides[current].classList.add("active");
-            }
-
-            setInterval(nextSlide, 5000); // Ganti setiap 5 detik
-
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const slides = document.querySelectorAll(".slide-end");
-            let current = 0;
-
-            function nextSlide() {
-                slides[current].classList.remove("active");
-                current = (current + 1) % slides.length;
-                slides[current].classList.add("active");
-            }
-
-            setInterval(nextSlide, 5000); // ganti slide tiap 5 detik
-
-        });
-    </script>
-
 </body>
 
 </html>

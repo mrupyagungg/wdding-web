@@ -1,142 +1,571 @@
 @import url("common.css");
 @import url("animation.css");
 
+/* custom */
+/* ================= FONT ================= */
+/* VIDEO FIXED BACKGROUND */
+.video-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+  overflow: hidden;
+}
+
+/* Video full layar */
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay gelap agar teks terbaca */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Konten di atas video */
+#home {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+}
+
+/* Pastikan body tidak ada margin */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== GLOBAL VIDEO ===== */
+.global-video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.global-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.global-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* ===== KONTEN DI ATAS VIDEO ===== */
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== AGAR SETIAP SECTION TERBACA ===== */
+.bg-light-dark {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.bg-white-black {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* ================= BRIDE SECTION ================= */
+.bride-section,
+.bride-section .container {
+  padding: 10px 10px;
+  background: rgba(255, 255, 255, 0);
+  position: relative;
+  z-index: 2;
+}
+
+/* Deskripsi */
+.section-desc {
+  max-width: 500px;
+  margin: auto;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Card Premium */
+.bride-card {
+  background: rgba(255, 255, 255, 0.64);
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+}
+
+.bride-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Foto */
+.bride-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+/* Symbol & */
+.and-symbol {
+  font-size: 4rem;
+  opacity: 0.7;
+}
+
+/* Font Arabic */
+.font-arabic {
+  font-size: 1.8rem;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .and-symbol {
+    margin: 10px 0;
+    font-size: 3rem;
+  }
+
+  .bride-card {
+    padding: 25px 15px;
+  }
+}
+
+/* Default styling */
+.and-symbol {
+  font-size: 4rem;
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* LIGHT MODE */
+html[data-bs-theme="light"] .theme-symbol {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+/* DARK MODE */
+html[data-bs-theme="dark"] .theme-symbol {
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+/* ================= FIRMAN SECTION LAYER ================= */
+.firman-section,
+.svg-wrapper,
+.wedding-date,
+.gallery,
+.love-gift,
+.comment,
+.end-section {
+  position: relative;
+  z-index: 10; /* paling depan */
+}
+
+.firman-section {
+  background-color: #555;
+}
+
+/* Jika ada overlay atau efek di dalamnya */
+.firman-section .bg-theme-auto,
+.wedding-date,
+.gallery,
+.love-gift,
+.comment,
+.end-section {
+  position: relative;
+  z-index: 11;
+}
+
+[data-bs-theme="dark"] .img-dark-light {
+  filter: brightness(0) invert(1) opacity(0.9);
+}
+
+/* =========================
+   END SECTION STYLE
+========================= */
+
+.end-section {
+  position: relative;
+  min-height: 80vh; /* lebih panjang ke bawah */
+  padding: 100px 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   BACKGROUND SLIDER
+========================= */
+
+.bg-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* tiap slide */
+.slide-end {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+  transform: scale(1.1);
+  transition:
+    opacity 1.5s ease-in-out,
+    transform 6s ease-in-out;
+}
+
+/* slide aktif */
+.slide-end.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================
+   OVERLAY GELAP
+========================= */
+
+.end-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* gelap supaya teks jelas */
+  z-index: 1;
+}
+
+/* =========================
+   CONTENT DI ATAS BACKGROUND
+========================= */
+
+.end-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* supaya teks lebih elegan */
+.end-section h2 {
+  letter-spacing: 1px;
+}
+
+.end-section p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* garis hr lebih lembut */
+.end-section hr {
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.7;
+}
+/* Gradient gelap dari tengah ke bawah */
+.end-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.211) 0%,
+    /* atas hampir transparan */ rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.707) 70%,
+    rgb(0, 0, 0) 100% /* bawah paling gelap */
+  );
+}
+
+/* CARD UTAMA */
+.event-card {
+  max-width: 500px;
+  margin: 60px auto;
+  position: relative;
+}
+
+/* FOTO ATAS */
+.event-image {
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 0;
+}
+
+/* BOX BAWAH */
+.event-content {
+  background: #f3f3f3;
+  padding: 30px;
+  margin-top: -60px;
+  position: relative;
+  z-index: 2;
+}
+
+.event-date {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    /* padding-bottom: 20px; */
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.date-number {
+  font-size: 4rem;
+  font-weight: 300;
+  margin-right: 10px;
+  color: #555;
+}
+
+.date-text span {
+  display: block;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* DETAIL */
+.event-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.event-time {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.event-location-title {
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+}
+
+.event-location {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.end-section,
+.event-card {
+  overflow-y: hidden;
+}
+
+/* RESPONSIVE */
+@media (max-width: 576px) {
+  .event-image {
+    height: 400px;
+    margin-top: 20px;
+  }
+
+  .date-number {
+    font-size: 3rem;
+  }
+}
+/* Versi Mirror */
+.event-card.reverse .event-image {
+  border-top-left-radius: 0;
+  border-top-right-radius: 200px;
+}
+
+.event-card.reverse .event-content {
+  text-align: right;
+}
+
+.event-card.reverse .event-date {
+  justify-content: flex-end;
+}
+
+.event-card.reverse .date-number {
+  margin-left: 20px;
+  /* margin-right: 0; */
+}
+
+@media (max-width: 576px) {
+  .event-card {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+/* custom */
+
 html {
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
 .with-scrollbar {
-    scrollbar-width: auto !important;
-    -ms-overflow-style: auto !important;
+  scrollbar-width: auto !important;
+  -ms-overflow-style: auto !important;
 }
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap");
 
 .font-esthetic {
-    font-family: 'Playfair Display', serif !important;
+  font-family: "Playfair Display", serif !important;
 }
 .font-esthetic2 {
-    font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .font-arabic {
-    font-family: 'Noto Naskh Arabic', serif !important;
+  font-family: "Noto Naskh Arabic", serif !important;
 }
 
 /* Default (mobile tetap normal) */
 .wedding-info {
-    position: relative;
+  position: relative;
 }
 
 /* Khusus desktop */
 @media (min-width: 992px) {
-    .wedding-info {
-        position: fixed;
-        bottom: 30px;
-        left: 40px;
-        z-index: 10;
+  .wedding-info {
+    position: fixed;
+    bottom: 30px;
+    left: 40px;
+    z-index: 10;
 
-        max-width: 350px;
-        text-align: left !important;
+    max-width: 350px;
+    text-align: left !important;
 
-        background: transparent !important;
-        backdrop-filter: none !important;
-        box-shadow: 2px !important;
-        padding: 0 !important;
-    }
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: 2px !important;
+    padding: 0 !important;
+  }
 }
 
 .img-center-crop {
-    width: 13rem;
-    height: 13rem;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
+  width: 13rem;
+  height: 13rem;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 html[data-bs-theme="dark"] .btn-transparent {
-    background-color: rgba(var(--bs-dark-rgb), 0.5) !important;
-    backdrop-filter: blur(0.5rem);
+  background-color: rgba(var(--bs-dark-rgb), 0.5) !important;
+  backdrop-filter: blur(0.5rem);
 }
 
 html[data-bs-theme="light"] .btn-transparent {
-    background-color: rgba(var(--bs-light-rgb), 0.5) !important;
-    backdrop-filter: blur(0.5rem);
+  background-color: rgba(var(--bs-light-rgb), 0.5) !important;
+  backdrop-filter: blur(0.5rem);
 }
 
 .loading-page {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1056;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1056;
 }
 
-html[data-bs-theme="light"] .color-theme-svg {
-    color: rgb(255, 255, 255);
-    background-color: var(--bs-light);
+html[data-bs-theme="light"] .color-theme-svg, .btn-maps {
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.47);
 }
-
-html[data-bs-theme="dark"] .color-theme-svg {
-    color: rgb(0, 0, 0);
-    background-color: var(--bs-dark);
+html[data-bs-theme="light"] .color-theme-svg-top {
+  color: rgba(255, 255, 255, 0.45);
+  /* background-color: rgba(0, 0, 0, 0.470); */
+}
+html[data-bs-theme="dark"] .color-theme-svg, .btn-maps {
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.47);
+}
+html[data-bs-theme="dark"] .color-theme-svg-top {
+  color: rgba(0, 0, 0, 0.45);
+  /* background-color: rgba(0, 0, 0, 0.470); */
 }
 
 html[data-bs-theme="light"] .bg-light-dark {
-    background-color: rgb(var(--bs-light-rgb));
+  background-color: rgba(255, 255, 255, 0.47);
 }
 
 html[data-bs-theme="dark"] .bg-light-dark {
-    background-color: rgb(var(--bs-dark-rgb));
+  background-color: rgba(0, 0, 0, 0.47);
 }
 
 html[data-bs-theme="light"] .bg-white-black {
-    background-color: rgb(var(--bs-white-rgb));
+  background-color: rgb(var(--bs-white-rgb));
 }
 
 html[data-bs-theme="dark"] .bg-white-black {
-    background-color: rgb(var(--bs-black-rgb));
+  background-color: rgb(var(--bs-black-rgb));
+}
+
+#home {
+  min-height: 100vh;
 }
 
 .bg-cover-home {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    mask-image: linear-gradient(0.5turn, transparent, black 40%, black 60%, transparent);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  mask-image: linear-gradient(
+    0.5turn,
+    transparent,
+    black 40%,
+    black 60%,
+    transparent
+  );
 }
 
 .width-loading {
-    width: 25%;
+  width: 25%;
 }
 
 .cursor-pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 992px) {
-    .width-loading {
-        width: 50%;
-    }
+  .width-loading {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .width-loading {
-        width: 75%;
-    }
+  .width-loading {
+    width: 75%;
+  }
 }
 
 svg {
-    display: block;
-    line-height: 0;
-    shape-rendering: geometricPrecision;
-    backface-visibility: hidden;
+  display: block;
+  line-height: 0;
+  shape-rendering: geometricPrecision;
+  backface-visibility: hidden;
 }
 
 .svg-wrapper {
-    overflow: hidden !important;
-    transform: translateZ(0) !important;
-}
-
-.no-gap-bottom {
-    margin-bottom: -0.75rem !important;
+  overflow: hidden !important;
+  transform: translateZ(0) !important;
+  transition: color 0.3s ease;
 }
