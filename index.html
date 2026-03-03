@@ -503,7 +503,7 @@
 
                             <div id="carousel-image-one" data-aos="fade-up" data-aos-duration="1500"
                                 class="carousel slide mt-4" data-bs-ride="carousel">
-                                 <div class="carousel-indicators">
+                                <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="0"
                                         class="active" aria-current="true" aria-label="Slide 1"></button>
                                     <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="1"
@@ -822,8 +822,8 @@
             <div class="d-flex flex-column text-center">
                 <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">The Wedding Of</h2>
 
-                <img src="./assets/images/gallery/header undangan.JPG" alt="background"
-                    class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto">
+                <!-- <img src="./assets/images/gallery/header undangan.JPG" alt="background"
+                    class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto"> -->
 
                 <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">Rulita &amp; Priyo </h2>
                 <div id="guest-name" data-message="Kepada Yth Bapak/Ibu/Saudara/i"></div>
@@ -834,6 +834,31 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Ambil parameter ?to= dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestName = urlParams.get('to');
+
+        const guestElement = document.getElementById('guest-name');
+
+        function capitalizeWords(str) {
+            return str.replace(/\b\w/g, char => char.toUpperCase());
+        }
+
+        if (guestName) {
+            const formattedName = capitalizeWords(decodeURIComponent(guestName));
+            guestElement.innerHTML = `
+            <p class="mb-1">${guestElement.dataset.message}</p>
+            <h4 class="mt-1">${formattedName}</h4>
+        `;
+        } else {
+            guestElement.innerHTML = `
+            <p>${guestElement.dataset.message}</p>
+            <h4>Nama Tamu</h4>
+        `;
+        }
+    </script>
 
     <!-- Button Group -->
     <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
