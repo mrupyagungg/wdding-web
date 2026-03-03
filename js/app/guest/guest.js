@@ -81,35 +81,27 @@ export const guest = (() => {
   /**
    * @returns {void}
    */
-  const showGuestName = () => {
-    /**
-     * Make sure "to=" is the last query string.
-     * Ex. ulems.my.id/?id=some-uuid-here&to=name
-     */
-    const raw = window.location.search.split("to=");
-    let name = null;
+  const urlParams = new URLSearchParams(window.location.search);
+    const guestName = urlParams.get('to');
 
-    if (raw.length > 1 && raw[1].length >= 1) {
-      name = window.decodeURIComponent(raw[1]);
+    const guestElement = document.getElementById('guest-name');
+
+    function capitalizeWords(str) {
+        return str.replace(/\b\w/g, char => char.toUpperCase());
     }
 
-    if (name) {
-      const guestName = document.getElementById("guest-name");
-      const div = document.createElement("div");
-      div.classList.add("m-2");
-
-      const template = `<small class="mt-0 mb-1 mx-0 p-0">${util.escapeHtml(guestName?.getAttribute("data-message"))}</small><p class="m-0 p-0" style="font-size: 1.25rem">${util.escapeHtml(name)}</p>`;
-      util.safeInnerHTML(div, template);
-
-      guestName?.appendChild(div);
+    if (guestName) {
+        const formattedName = capitalizeWords(decodeURIComponent(guestName));
+        guestElement.innerHTML = `
+            <p class="mb-1">Kepada Yth Bapak/Ibu/Saudara/i</p>
+            <h4 class="mt-1">${formattedName}</h4>
+        `;
+    } else {
+        guestElement.innerHTML = `
+            <p>Kepada Yth Bapak/Ibu/Saudara/i</p>
+            <h4>Nama Tamu</h4>
+        `;
     }
-
-    const form = document.getElementById("form-name");
-    if (form) {
-      form.value = information.get("name") ?? name;
-    }
-  };
-
   /**
    * @returns {Promise<void>}
    */
