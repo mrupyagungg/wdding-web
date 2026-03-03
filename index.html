@@ -835,31 +835,6 @@
         </div>
     </div>
 
-    <script>
-        // Ambil parameter ?to= dari URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const guestName = urlParams.get('to');
-
-        const guestElement = document.getElementById('guest-name');
-
-        function capitalizeWords(str) {
-            return str.replace(/\b\w/g, char => char.toUpperCase());
-        }
-
-        if (guestName) {
-            const formattedName = capitalizeWords(decodeURIComponent(guestName));
-            guestElement.innerHTML = `
-            <p class="mb-1">${guestElement.dataset.message}</p>
-            <h4 class="mt-1">${formattedName}</h4>
-        `;
-        } else {
-            guestElement.innerHTML = `
-            <p>${guestElement.dataset.message}</p>
-            <h4>Nama Tamu</h4>
-        `;
-        }
-    </script>
-
     <!-- Button Group -->
     <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
         <!-- Theme Button -->
