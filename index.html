@@ -813,24 +813,44 @@
     </div>
 
     <!-- Welcome Page -->
-    <div class="text-white loading-page bg-white-black" id="welcome" style="opacity: 0;">
+    <div class="text-white loading-page bg-white-black d-flex flex-column" id="welcome" style="opacity: 0;">
 
         <img src="./assets/images/gallery/DSC02966.JPG"
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; filter:brightness(60%) blur(1px); z-index:-1;">
+            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; filter:brightness(65%) blur(0.5px); z-index:-1;">
+        <!-- Gradient Bawah -->
+        <div style="
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            height:40%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+            z-index:0;">
+        </div>
 
-        <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
-            <div class="d-flex flex-column text-center">
-                <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">The Wedding Of</h2>
+<div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto"
+     style="position:relative; z-index:1;">            <div class="d-flex flex-column text-center">
+                <h2 class="font-esthetic mb-1" style="font-size: 2.25rem;">The Wedding Of</h2>
 
                 <!-- <img src="./assets/images/gallery/header undangan.JPG" alt="background"
                     class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto"> -->
 
-                <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">Rulita &amp; Priyo </h2>
-                <div id="guest-name" data-message="Kepada Yth Bapak/Ibu/Saudara/i"></div>
+                <h2 class="font-esthetic mb-1" style="font-size: 2.25rem;">Rulita &amp; Priyo </h2>
+                <!-- Tanggal -->
+                <p class="mb-4" style="font-size: 1.1rem;">
+                    29 Maret 2026
+                </p>
+
+                <!-- Spacer tanpa br -->
+                <div style="margin-top: 250px;"></div>
+
+                <div class="mt-4" id="guest-name" data-message="Kepada Yth Bapak/Ibu/Saudara/i"></div>
 
                 <button type="button" class="btn btn-light shadow rounded-4 mt-3 mx-auto"
-                    onclick="undangan.guest.open(this)"><i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Open
-                    Invitation</button>
+                    onclick="undangan.guest.open(this)">
+                    <i class="fa-solid fa-envelope-open fa-bounce me-2"></i>
+                    Open Invitation
+                </button>
             </div>
         </div>
     </div>
