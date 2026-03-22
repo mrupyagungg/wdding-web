@@ -216,7 +216,7 @@
                                 cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
                                 sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran
                                 Allah) bagi kaum yang berpikir.
-                                </p>
+                            </p>
                             <p class="m-0 p-0 text-theme-auto" style="font-size: 0.95rem;">(Q.S. Ar-Rum : 21)</p>
                         </div>
 
@@ -679,7 +679,7 @@
                 </section>
 
                 <!-- Comment -->
-                <section class="comment bg-light-dark my-0 pb-0 pt-3" id="comment">
+                <section class="comment bg-light-dark my-0 pb-0 pt-3">
                     <div class="container">
                         <div class="border rounded-5 shadow p-3 mb-2">
                             <h2 class="font-esthetic text-center mt-2 mb-4" style="font-size: 2.25rem;">Ucapan &amp; Doa
@@ -735,7 +735,7 @@
 
                             <div class="d-grid">
                                 <button class="btn btn-primary btn-sm rounded-4 shadow m-1"
-                                    onclick="undangan.comment.send(this)" data-offline-disabled="false">
+                                   onclick="sendComment()" data-offline-disabled="false">
                                     <i class="fa-solid fa-paper-plane me-2"></i>Send
                                 </button>
                             </div>
@@ -748,6 +748,63 @@
                         <nav class="d-flex d-none justify-content-center mt-1 mb-0" id="pagination"></nav>
                     </div>
                 </section>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        loadComments();
+                    });
+
+                    function sendComment() {
+                        const name = document.getElementById("form-name").value;
+                        const presence = document.getElementById("form-presence").value;
+                        const comment = document.getElementById("form-comment").value;
+
+                        if (name.length < 2 || comment.length < 1) {
+                            alert("Nama dan ucapan wajib diisi!");
+                            return;
+                        }
+
+                        let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+                        comments.push({
+                            name: name,
+                            presence: presence,
+                            comment: comment,
+                            time: new Date().toLocaleString()
+                        });
+
+                        localStorage.setItem("comments", JSON.stringify(comments));
+
+                        // reset form
+                        document.getElementById("form-name").value = "";
+                        document.getElementById("form-presence").value = "0";
+                        document.getElementById("form-comment").value = "";
+
+                        loadComments();
+                    }
+
+                    function loadComments() {
+                        let comments = JSON.parse(localStorage.getItem("comments")) || [];
+                        let container = document.getElementById("comments");
+
+                        container.innerHTML = "";
+
+                        comments.reverse().forEach(c => {
+                            let status = "";
+                            if (c.presence == "1") status = "✅ Datang";
+                            else if (c.presence == "2") status = "❌ Berhalangan";
+
+                            container.innerHTML += `
+                                <div class="border rounded-4 p-3 mb-2 shadow-sm bg-white">
+                                    <h6 class="mb-1">${c.name}</h6>
+                                    <small class="text-muted">${c.time}</small><br>
+                                    <small>${status}</small>
+                                    <p class="mt-2 mb-0">${c.comment}</p>
+                                </div>
+                            `;
+                        });
+                    }
+                </script>
 
                 <!-- End Of Invitation -->
                 <section class="end-section position-relative py-2 no-gap-bottom">
