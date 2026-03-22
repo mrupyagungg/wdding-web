@@ -749,12 +749,42 @@
                     </div>
                 </section>
 
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        loadComments();
-                    });
+                <!-- script comments -->
+                <script type="module">
+                    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+                    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
 
-                    function sendComment() {
+                    // 🔥 TAMBAHAN WAJIB
+                    import {
+                        getFirestore,
+                        collection,
+                        addDoc,
+                        query,
+                        orderBy,
+                        onSnapshot
+                    } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+
+                    const firebaseConfig = {
+                        apiKey: "AIzaSyDoVXMwdhSWuafnx0YhCwmTijaSE6kticM",
+                        authDomain: "wedding-2af03.firebaseapp.com",
+                        projectId: "wedding-2af03",
+                        storageBucket: "wedding-2af03.firebasestorage.app",
+                        messagingSenderId: "529717643854",
+                        appId: "1:529717643854:web:e6aaedf834bb00d734911f",
+                        measurementId: "G-ZM6PMGQ4S0"
+                    };
+
+                    // INIT
+                    const app = initializeApp(firebaseConfig);
+                    const analytics = getAnalytics(app);
+
+                    // 🔥 INIT DATABASE
+                    const db = getFirestore(app);
+
+                    // =====================
+                    // 📤 KIRIM KOMENTAR
+                    // =====================
+                    window.sendComment = async function () {
                         const name = document.getElementById("form-name").value;
                         const presence = document.getElementById("form-presence").value;
                         const comment = document.getElementById("form-comment").value;
@@ -764,46 +794,44 @@
                             return;
                         }
 
-                        let comments = JSON.parse(localStorage.getItem("comments")) || [];
-
-                        comments.push({
+                        await addDoc(collection(db, "comments"), {
                             name: name,
                             presence: presence,
                             comment: comment,
-                            time: new Date().toLocaleString()
+                            createdAt: new Date()
                         });
 
-                        localStorage.setItem("comments", JSON.stringify(comments));
-
-                        // reset form
+                        // reset
                         document.getElementById("form-name").value = "";
                         document.getElementById("form-presence").value = "0";
                         document.getElementById("form-comment").value = "";
+                    };
 
-                        loadComments();
-                    }
+                    // =====================
+                    // 👀 REALTIME DISPLAY
+                    // =====================
+                    const q = query(collection(db, "comments"), orderBy("createdAt", "desc"));
 
-                    function loadComments() {
-                        let comments = JSON.parse(localStorage.getItem("comments")) || [];
-                        let container = document.getElementById("comments");
-
+                    onSnapshot(q, (snapshot) => {
+                        const container = document.getElementById("comments");
                         container.innerHTML = "";
 
-                        comments.reverse().forEach(c => {
+                        snapshot.forEach((doc) => {
+                            const c = doc.data();
+
                             let status = "";
                             if (c.presence == "1") status = "✅ Datang";
                             else if (c.presence == "2") status = "❌ Berhalangan";
 
                             container.innerHTML += `
-                                <div class="bg-light-dark border rounded-4 p-3 mb-2 shadow-sm ">
-                                    <h6 class="mb-1">${c.name}</h6>
-                                    <small class="text-muted">${c.time}</small><br>
-                                    <small>${status}</small>
-                                    <p class="mt-2 mb-0">${c.comment}</p>
-                                </div>
-                            `;
+      <div class="bg-light-dark border rounded-4 p-3 mb-2 shadow-sm">
+        <h6 class="mb-1">${c.name}</h6>
+        <small>${status}</small>
+        <p class="mt-2 mb-0">${c.comment}</p>
+      </div>
+    `;
                         });
-                    }
+                    });
                 </script>
 
                 <!-- End Of Invitation -->
@@ -1028,31 +1056,6 @@
         });
     </script>
 
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-            apiKey: "AIzaSyDoVXMwdhSWuafnx0YhCwmTijaSE6kticM",
-            authDomain: "wedding-2af03.firebaseapp.com",
-            databaseURL: "https://wedding-2af03-default-rtdb.firebaseio.com",
-            projectId: "wedding-2af03",
-            storageBucket: "wedding-2af03.firebasestorage.app",
-            messagingSenderId: "529717643854",
-            appId: "1:529717643854:web:e6aaedf834bb00d734911f",
-            measurementId: "G-ZM6PMGQ4S0"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-    </script>
 
 </body>
 
